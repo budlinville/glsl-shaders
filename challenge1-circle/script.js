@@ -17,9 +17,9 @@ varying vec3 vPosition;
 
 void main (void)
 {
-  vec3 color = vec3(0.0);
-  color.r = smoothstep(0.0, 0.2, vPosition.x);
-  color.g = smoothstep(0.4, 0.2, vPosition.y);
+  vec3 color = vec3(0.0, 0.0, 1.0);
+  color.r = step(0.6, length(vPosition.xy));
+  // color.g = step(0.6, length(vPosition.xy));
   
   gl_FragColor = vec4(color, 1.0);
 }
